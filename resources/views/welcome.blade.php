@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimal-ui">
     <title>Welcome to Partnership Strategy</title>
-    <meta content="Admin Dashboard" name="description">
+    <meta content="Partnership Strategy" name="description">
     <meta content="Themesbrand" name="author">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
