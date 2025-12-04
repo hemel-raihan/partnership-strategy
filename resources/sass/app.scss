@@ -1,0 +1,287 @@
+// Variables
+@import 'variables';
+
+body{
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+.error-message {
+  font-size: 12px;
+  color: #ec4561;
+  margin-top: 5px;
+}
+
+.error-border {
+  border-color: #ec4561 !important;
+}
+
+.submit-button {
+  height: 38px !important;
+}
+
+.router-link-exact-active {
+  color: #b4c9de !important;
+  background-color: #383b4e;
+}
+
+a {
+  color: rgb(52, 144, 220)
+}
+
+.modal-title-font {
+  font-size: 16px;
+}
+
+.select2-container .select2-selection--single {
+  height: 35px !important;
+  border-color: #ced4da !important;
+}
+
+.invoice-class{
+  #pos-app {
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    padding: 10px;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .sticky-header thead th {
+    position: sticky;
+    top: 0;
+    background-color: #333547;
+    z-index: 1;
+  }
+  
+  .store-info {
+    /* flex: 2; */
+    text-align: center;
+  }
+  
+  .store-name {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .logged-in-person {
+    font-size: 16px;
+  }
+  
+  .customer-search-bar{
+    display: table; 
+    width: 100%; 
+    height: 100%;
+  }
+
+  .search-customer{
+    display: table-cell; 
+    width: 100%;
+    vertical-align: middle;
+  }
+
+  .barcode-search-bar{
+    display: table;
+    width: 100%;
+  }
+
+  .barcode-search{
+    display: table-cell;
+  }
+
+  .item-count{
+    display: table-cell; 
+    text-align: right;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 0px !important;
+    font-size: 16px;
+  }
+  
+  .form-control {
+    font-size: .875rem !important;
+  }
+  
+  main {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .barcode-search {
+    margin-bottom: 20px;
+  }
+  
+  .product-list {
+    // height:380px; 
+    overflow:auto;
+    border: 1px solid #c5c5c5;
+  }
+
+  .search-product-list {
+    height:380px; 
+    overflow:auto;
+    border: 1px solid #c5c5c5;
+  }
+
+  .invoice-list {
+    height:180px; 
+    overflow:auto;
+    border: 1px solid #c5c5c5;
+  }
+
+  .return-product-list {
+    height: 215px; 
+    overflow:auto;
+    border: 1px solid #c5c5c5;
+  }
+
+  .tender-box {
+    // height: 350px; 
+    overflow: auto;
+  }
+  
+  .summary-box {
+    background-color: #e6f1f5;
+    color: black;
+    padding: 10px; /* Reduce the padding */
+    border: 1px solid white;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .summary-line {
+    margin: 0px 0; /* Reduce the vertical margin */
+  }
+  
+  .line {
+    border-top: 1px solid white;
+    margin-top: 5px; /* Reduce the vertical margin */
+    margin-bottom: 5px; /* Reduce the vertical margin */
+  }
+  
+  .count-box {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  
+  .count-text {
+    font-weight: bold;
+    background-color: black;
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: yellow;
+  }
+  
+  .free-items {
+    height: 180px;
+    overflow: auto;
+    border: 1px solid #c5c5c5;
+  }
+
+  .all-products {
+    height: 550px;
+    overflow: auto;
+    border: 1px solid #c5c5c5;
+  }
+  
+  .agents{
+    margin-top: 40px; 
+    border: 1px solid #c5c5c5; 
+    padding: 5px;
+  }
+
+  .agent-items {
+    height: 120px;
+    overflow: auto;
+  }
+  
+  .tender-class {
+    tr {
+      td:nth-child(1) {
+        background-color: #add8e63d;
+      }
+  
+      td:nth-child(2) {
+        width: 150px;
+        text-align: right
+      }
+    }
+  
+  }
+
+  .hold-btn{
+    padding-right: 0px;
+  }
+
+  .recall-btn{
+    padding-right: 0px;
+  }
+  
+  .agent-items {
+    tr {
+      td:nth-child(1) {
+        background-color: #add8e63d;
+      }
+    }
+  
+  }
+  
+  .customer-info {
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-top: 2px;
+  }
+  
+  .customer-name {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .customer-points {
+    font-size: 14px;
+    color: #007BFF;
+  }
+  
+  .conversion-rate {
+  
+  }
+  
+  .table-container {
+    position: relative;
+    // overflow: auto;
+    // max-height: 400px; /* Adjust the maximum height as needed */
+  }
+  
+  .sticky-header thead th {
+    position: sticky;
+    top: 0;
+    background-color: #333547;
+    z-index: 1;
+  }
+  
+  .sticky-header thead th:first-child {
+    left: 0;
+    z-index: 2;
+  }
+  
+  .sticky-header tbody th {
+    position: sticky;
+    background-color: white; /* You can customize the background color */
+    z-index: 1;
+  }
+  
+  .sticky-header tbody th:first-child {
+    left: 0;
+    z-index: 2;
+  }
+}

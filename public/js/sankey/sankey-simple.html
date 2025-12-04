@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="echarts.min.js"></script>
+       <script type="text/javascript" src="echarts-gl.min.js"></script>
+       <script type="text/javascript" src="ecStat.min.js"></script>
+       <script type="text/javascript" src="dataTool.min.js"></script>
+       <script type="text/javascript" src="china.js"></script>
+       <script type="text/javascript" src="world.js"></script>       
+       <script type="text/javascript" src="bmap.min.js"></script>
+       <script type="text/javascript">
+		var dom = document.getElementById("container");
+		var myChart = echarts.init(dom);
+		var app = {};
+		option = null;
+		option = {
+			series: {
+				type: 'sankey',
+				layout:'none',
+				focusNodeAdjacency: 'allEdges',
+				data: [{
+					name: 'a'
+				}, {
+					name: 'b'
+				}, {
+					name: 'a1'
+				}, {
+					name: 'a2'
+				}, {
+					name: 'b1'
+				}, {
+					name: 'c'
+				}, {
+					name: 'a21'
+				}, {
+					name: 'E'
+				}, {
+					name: 'F'
+				}, {
+					name: 'G'
+				}],
+				links: [{
+					source: 'a',
+					target: 'a1',
+					value: 5
+				}, {
+					source: 'a',
+					target: 'a2',
+					value: 3
+				}, {
+					source: 'b',
+					target: 'b1',
+					value: 8
+				}, {
+					source: 'a',
+					target: 'b1',
+					value: 3
+				}, {
+					source: 'b1',
+					target: 'a1',
+					value: 1
+				}, {
+					source: 'b1',
+					target: 'c',
+					value: 2
+				}, {
+					source: 'b1',
+					target: 'a21',
+					value: 10
+				}, {
+					source: 'D',
+					target: 'E',
+					value: 15
+				}, {
+					source: 'a21',
+					target: 'F',
+					value: 20
+				}, {
+					source: 'F',
+					target: 'G',
+					value: 20
+				}]
+			}
+		};
+
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>
