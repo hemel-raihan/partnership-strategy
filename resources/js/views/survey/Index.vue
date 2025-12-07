@@ -64,14 +64,14 @@
 
           <div class="form-group">
             <label>Contact Number</label>
-                        <input v-model="form.contactNumber" type="tel" placeholder="+88017xxxxxxxx">
+                        <input v-model="form.contactNumber" type="tel" placeholder="017xxxxxxxx">
           </div>
         </div>
 
         <div class="form-grid">
           <div class="form-group">
             <label>Email Address</label>
-                        <input v-model="form.email" type="email" placeholder="contact@partner.com" :class="{ 'input-error': validationErrors.email }">
+                        <input v-model="form.email" type="email" placeholder="contact@gmail.com" :class="{ 'input-error': validationErrors.email }">
             <p v-if="validationErrors.email" class="error-text">{{ validationErrors.email }}</p>
           </div>
 
@@ -147,7 +147,7 @@
 
           <div class="form-group">
             <label>Initial Agreement Value</label>
-                        <input v-model="form.initialValue" type="text" placeholder="e.g., BDT 50,000 or $10M">
+            <input v-model="form.initialValue" type="text" placeholder="e.g., BDT 50,000">
           </div>
         </div>
 
@@ -159,7 +159,7 @@
 
           <div class="form-group">
             <label>Latest Agreement Value</label>
-                        <input v-model="form.latestValue" type="text" placeholder="e.g., BDT 50,000 or $10M">
+            <input v-model="form.latestValue" type="text" placeholder="e.g., BDT 50,000">
           </div>
         </div>
       </div>
@@ -180,7 +180,7 @@
 
           <div class="form-group">
               <label>Contact Person Mobile <span class="required">*</span></label>
-              <input v-model="form.aciMobile" type="tel" :class="{ 'input-error': validationErrors.aciMobile }"> 
+              <input v-model="form.aciMobile" type="tel" :class="{ 'input-error': validationErrors.aciMobile }" placeholder="017xxxxxxxx"> 
               <p v-if="validationErrors.aciMobile" class="error-text">{{ validationErrors.aciMobile }}</p>
           </div>
         </div>
@@ -412,18 +412,42 @@ export default {
       ],
 
       countryList: [
-        "United States", "Canada", "United Kingdom", "Australia", "Germany", "France", "Japan",
-        "India", "Brazil", "China", "Mexico", "South Africa", "Nigeria", "Russia", "Bangladesh", "Other"
-      ],
+        "Afghanistan","Albania","Algeria","Andorra","Angola","Antigua and Barbuda","Argentina","Armenia","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan","Bolivia","Bosnia and Herzegovina","Botswana","Brazil","Brunei","Bulgaria","Burkina Faso","Burundi","Cabo Verde","Cambodia","Cameroon","Canada","Central African Republic","Chad","Chile","China","Colombia","Comoros","Congo, Democratic Republic of the","Congo, Republic of the","Costa Rica","Cote d'Ivoire","Croatia","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Eswatini","Ethiopia","Fiji","Finland","France","Gabon","Gambia","Georgia","Germany","Ghana","Greece","Grenada",
+        "Guatemala","Guinea","Guinea-Bissau","Guyana","Haiti","Honduras","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Kiribati","Korea, North","Korea, South","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Morocco","Mozambique","Myanmar","Namibia","Nauru","Nepal","Netherlands","New Zealand","Nicaragua","Niger","Nigeria","North Macedonia","Norway","Oman",
+        "Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Qatar","Romania","Russia","Rwanda","Saint Kitts and Nevis","Saint Lucia","Saint Vincent and the Grenadines","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Sudan","Spain","Sri Lanka","Sudan","Suriname","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor-Leste","Togo","Tonga","Trinidad and Tobago","Tunisia","Turkey","Turkmenistan","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Yemen","Zambia","Zimbabwe","Other"
+      ],
 
       aciDepartmentOptions: [
-        "Business Unit A - Chemicals",
-        "Business Unit B - Pharma",
-        "Corporate Sales & Marketing",
-        "IT & Digital Services",
-        "R&D Department",
-        "Other ACI Business"
-      ],
+        "Premiaflex Plastics Limited",
+        "ACI Animal Genetics",
+        "Crop Care & Public Health",
+        "Sulphur",
+        "ACI Salt Limited",
+        "ACI Consumer Electronics",
+        "Consumer",
+        "Paint",
+        "Agri Science",
+        "Fertilizer",
+        "Aerosol",
+        "M. Coil",
+        "Godrej",
+        "Animal Health",
+        "Distribution",
+        "Trading",
+        "NG",
+        "MIS",
+        "Pharma Sample",
+        "ACI Foods",
+        "Pharma",
+        "Test Project",
+        "Agriculture Equipment",
+        "Seeds",
+        "ACI Trading",
+        "Servier",
+        "Corporate",
+        "FINANCE DEPARTMENT",
+        "Accessories"
+     ],
     };
   },
 
