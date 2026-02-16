@@ -131,10 +131,18 @@
         <div class="form-grid">
           <div class="form-group">
             <label>ACI Business/Department <span class="required">*</span></label>
-                        <select v-model="form.aciDepartment" required :class="{ 'input-error': validationErrors.aciDepartment }">
+<!--                         <select v-model="form.aciDepartment" required :class="{ 'input-error': validationErrors.aciDepartment }">
               <option value="" disabled>Select Department/Business</option>
               <option v-for="dept in aciDepartmentOptions" :key="dept" :value="dept">{{ dept }}</option>
-            </select>
+            </select> -->
+            <multiselect
+                v-model="form.aciDepartment"
+                :options="aciDepartmentOptions"
+                :multiple="true"
+                id="model"
+                placeholder="Select Model"
+                :class="{ 'input-error': validationErrors.aciDepartment }">
+            </multiselect>
             <p v-if="validationErrors.aciDepartment" class="error-text">{{ validationErrors.aciDepartment }}</p>
           </div>
         </div>
@@ -352,9 +360,11 @@
 <script>
 import axios from "axios";
 import { Common } from "../../mixins/common";
+import Multiselect from 'vue-multiselect'
 
 export default {
   mixins: [Common],
+  components: { Multiselect },
   data() {
     return {
       currentStep: 1,
@@ -373,7 +383,7 @@ export default {
         partnershipType: "",
         otherPartnershipType: "",
 
-        aciDepartment: "",
+        aciDepartment: [],
         initialDate: "",
         initialValue: "",
         latestDate: "",
@@ -418,6 +428,13 @@ export default {
       ],
 
       aciDepartmentOptions: [
+        "ACI Motors",
+        "Agri Equipment",
+        "Construction Equipment",
+        "Consumer Vehicle",
+        "Commercial Vehicle",
+        "Power Solutions",
+        "Tyres",
         "Premiaflex Plastics Limited",
         "ACI Animal Genetics",
         "Crop Care & Public Health",
@@ -439,7 +456,6 @@ export default {
         "Pharma Sample",
         "ACI Foods",
         "Pharma",
-        "Test Project",
         "Agriculture Equipment",
         "Seeds",
         "ACI Trading",
@@ -513,10 +529,10 @@ export default {
           isValid = false;
         }
       } else if (step === 3) {
-        if (!this.form.aciDepartment) {
-          this.validationErrors.aciDepartment = "ACI Business/Department is required.";
-          isValid = false;
-        }
+        if (!this.form.aciDepartment || this.form.aciDepartment.length === 0) {
+            this.validationErrors.aciDepartment = "ACI Business/Department is required.";
+            isValid = false;
+        }
       } else if (step === 4) {
         if (!this.form.aciContactName) {
           this.validationErrors.aciContactName = "Contact Name is required.";
@@ -590,7 +606,13 @@ export default {
           return; 
       }
       try {
-        const res = await axios.post("/partnership-strategy/api/save-survey", this.form);
+        let payload = { ...this.form }
+
+        if (Array.isArray(payload.aciDepartment)) {
+            payload.aciDepartment = payload.aciDepartment.join(',');
+        }
+
+        const res = await axios.post("/partnership-strategy/api/save-survey", payload);
         this.successNoti("Survey submitted successfully!");
         this.resetForm();
 
@@ -610,7 +632,7 @@ export default {
 };
 </script>
 
-
+<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style>
 * {
             margin: 0;
@@ -1037,6 +1059,11 @@ export default {
         .input-error {
             border-color: var(--error) !important;
         }
+
+        .input-error .multiselect__tags {
+            border-color: #dc3545 !important;
+        }
+
 
         .error-text {
             font-size: 0.85rem;
